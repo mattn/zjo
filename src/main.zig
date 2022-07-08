@@ -6,6 +6,7 @@ pub fn main() anyerror!void {
     defer p.deinit();
 
     var args = try std.process.argsWithAllocator(allocator);
+    defer args.deinit();
 
     const stdout = std.io.getStdOut().writer();
 
