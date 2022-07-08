@@ -46,6 +46,7 @@ pub fn main() anyerror!void {
     } else {
         try (std.json.Value{ .Object = m }).jsonStringify(.{}, stdout);
     }
+    _ = try stdout.write("\n");
 }
 
 test "basic test" {
